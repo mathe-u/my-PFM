@@ -17,7 +17,7 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 * **RF01 - Autenticação:** O sistema deve permitir o cadastro e login de usuários via e-mail/senha.
 * **RF02 - Gestão de Perfil:** O usuário deve poder editar seus dados pessoais e preferências (moeda, idioma, fuso horário).
 * **RF03 - Criação de Grupos:** O usuário deve poder criar um "Grupo Financeiro" (ex: Casa, Viagem, Casal).
-* **RF04 - Convites para o Grupo:** O Administrador deve poder gerar um link de convite ou enviar um convite via e-mail para adicionar membros ao grupo.
+* **RF04 - Convites para o Grupo:** O Administrador deve poder gerar um link de convite.
 
 ### 3.2. Gestão de Transações
 
@@ -33,7 +33,7 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 
 ### 3.3. Organização e Planejamento
 
-* **RF09 - Gestão de Categorias:** O sistema deve permitir a criação, edição e exclusão de categorias e subcategorias personalizadas.
+* **RF09 - Gestão de Categorias:** O sistema deve permitir a criação, edição e exclusão de categorias.
 * **RF10 - Definição de Orçamentos (Budgets):** Os usuários devem poder estabelecer limites de gastos mensais por categoria, recebendo alertas visuais quando o limite estiver próximo (ex: 80%) ou for ultrapassado.
 * **RF11 - Gestão de Metas (Goals):** O grupo deve poder criar metas de economia (ex: "Viagem de Férias"), definindo um valor alvo, data limite e registrando aportes mensais.
 
