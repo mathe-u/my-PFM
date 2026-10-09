@@ -29,7 +29,8 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 
 * **RF07 - Integridade da Divisão:** Ao dividir uma despesa, a soma das partes (em porcentagem ou valor absoluto) deve ser exatamente igual a 100% ou ao valor total da transação.
 
-* **RF08 - Transferências Internas:** O sistema deve permitir registrar transferências de saldo entre contas ou acertos de contas entre membros do grupo.
+* **RF08 - Transferências entre contas:** O sistema deve permitir que o usuário registre transferências de valores entre duas contas financeiras, informando a conta de origem, a conta de destino, o valor, a data e uma descrição opcional. A operação deve atualizar os saldos das contas envolvidas de maneira consistente, sem contabilizar a transferência como receita ou despesa.
+
 * **RF09 - Transações Recorrentes:** O sistema deve permitir a configuração de despesas ou receitas que se repetem (mensal, semanal, anual).
 
 ### 3.3. Organização e Planejamento
