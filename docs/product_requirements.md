@@ -27,33 +27,34 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 * Porcentagem personalizada (ex: 70/30).
 * Valor fixo exato para cada membro.
 
+* **RF07 - Integridade da Divisão:** Ao dividir uma despesa, a soma das partes (em porcentagem ou valor absoluto) deve ser exatamente igual a 100% ou ao valor total da transação.
 
-* **RF07 - Transferências Internas:** O sistema deve permitir registrar transferências de saldo entre contas ou acertos de contas entre membros do grupo.
-* **RF08 - Transações Recorrentes:** O sistema deve permitir a configuração de despesas ou receitas que se repetem (mensal, semanal, anual).
+* **RF08 - Transferências Internas:** O sistema deve permitir registrar transferências de saldo entre contas ou acertos de contas entre membros do grupo.
+* **RF09 - Transações Recorrentes:** O sistema deve permitir a configuração de despesas ou receitas que se repetem (mensal, semanal, anual).
 
 ### 3.3. Organização e Planejamento
 
-* **RF09 - Gestão de Categorias:** O sistema deve permitir a criação, edição e exclusão de categorias.
-* **RF10 - Definição de Orçamentos (Budgets):** Os usuários devem poder estabelecer limites de gastos mensais por categoria, recebendo alertas visuais quando o limite estiver próximo (ex: 80%) ou for ultrapassado.
-* **RF11 - Gestão de Metas (Goals):** O grupo deve poder criar metas de economia (ex: "Viagem de Férias"), definindo um valor alvo, data limite e registrando aportes mensais.
+* **RF10 - Gestão de Categorias:** O sistema deve permitir a criação, edição e exclusão de categorias.
+* **RF11 - Definição de Orçamentos (Budgets):** Os usuários devem poder estabelecer limites de gastos mensais por categoria, recebendo alertas visuais quando o limite estiver próximo (ex: 80%) ou for ultrapassado.
+* **RF12 - Gestão de Metas (Goals):** O grupo deve poder criar metas de economia (ex: "Viagem de Férias"), definindo um valor alvo, data limite e registrando aportes mensais.
 
 ### 3.4. Visualização e Relatórios
 
-* **RF12 - Dashboard Interativo:** O sistema deve apresentar um painel principal com:
+* **RF13 - Dashboard Interativo:** O sistema deve apresentar um painel principal com:
 * Saldo total consolidado e saldo por conta.
 * Gráfico de receitas vs. despesas do mês.
 * Resumo de quem deve a quem (acertos pendentes no grupo).
 
 
-* **RF13 - Extrato Detalhado:** O sistema deve fornecer uma lista filtrável de todas as transações (por data, membro, categoria).
+* **RF14 - Extrato Detalhado:** O sistema deve fornecer uma lista filtrável de todas as transações (por data, membro, categoria).
 
 ---
 
 ## 4. Regras de Negócio (RN)
 
-* **RN01 - Integridade da Divisão:** Ao dividir uma despesa, a soma das partes (em porcentagem ou valor absoluto) deve ser exatamente igual a 100% ou ao valor total da transação.
-* **RN02 - Exclusão de Transações:** Uma transação compartilhada só pode ser editada ou excluída pelo autor do lançamento ou pelo Administrador do grupo.
-* **RN03 - Fechamento de Fatura/Mês:** Saldos de "quem deve a quem" devem ser calculados dinamicamente com base nas despesas compartilhadas pagas por um único membro em nome do grupo.
+
+* **RN01 - Exclusão de Transações:** Uma transação compartilhada só pode ser editada ou excluída pelo autor do lançamento ou pelo Administrador do grupo.
+* **RN02 - Fechamento de Fatura/Mês:** Saldos de "quem deve a quem" devem ser calculados dinamicamente com base nas despesas compartilhadas pagas por um único membro em nome do grupo.
 
 ---
 
