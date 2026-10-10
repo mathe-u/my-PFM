@@ -21,7 +21,8 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 
 ### 3.2. Gestão de Transações
 
-* **RF05 - Lançamento de Receitas/Despesas:** O sistema deve permitir o registro de transações com os seguintes dados: valor, data, descrição, categoria e conta de origem/destino.
+* **RF05 - Lançamento de Receitas/Despesas:** O sistema deve permitir o registro de transações com os seguintes dados: valor, data, descrição, categoria e conta de origem/destino. Os lançamentos pessoais não devem ser considerados despesas ou receitas compartilhadas automaticamente.
+
 * **RF06 - Divisão de Despesas (Split):** No registro de uma despesa, o sistema deve permitir a divisão do valor entre os membros do grupo de três formas:
 * Igualitária (ex: 50/50).
 * Porcentagem personalizada (ex: 70/30).
