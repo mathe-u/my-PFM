@@ -88,11 +88,13 @@ Para garantir manutenibilidade, escalabilidade e qualidade do software, o sistem
 * **RNF05 - Responsividade:** A interface web deve ser responsiva e otimizada para uso em dispositivos móveis (Mobile First), visto que lançamentos financeiros frequentemente ocorrem "on the go".
 * **RNF06 - Segurança de Dados:** As senhas devem ser armazenadas com hash criptográfico (ex: bcrypt/argon2). A autenticação da API deve utilizar tokens JWT com expiração configurada.
 
-* **RNF07 - Rotas publicas:** As rotas públicas podem ser acessadas sem autenticação, mas devem ser protegidas por rate limiting.
+* **RNF07 - Operacoes Atomicas:** O sistema deve garantir que as operacoes financeiras sejam atomicas, ou seja, que sejam executadas completamente ou nenhuma parte delas seja executada. Caso ocorra alguma falha durante a execucao de uma operacao, o sistema deve reverter todas as operacoes realizadas ate o momento, garantindo a integridade dos dados.
+
+* **RNF08 - Rotas publicas:** As rotas públicas podem ser acessadas sem autenticação, mas devem ser protegidas por rate limiting.
 - /api/auth/login
 - /api/auth/register
 
-* **RNF08 - Rotas protegidas:** As rotas protegidas devem ser acessadas apenas com autenticação e devem ter rate limiting.
+* **RNF09 - Rotas protegidas:** As rotas protegidas devem ser acessadas apenas com autenticação e devem ter rate limiting.
 - /api/groups
 - /api/transactions
 - /api/budgets
