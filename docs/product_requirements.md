@@ -43,28 +43,25 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 
 * **RF10 - Transações Recorrentes:** O sistema deve permitir a configuração de despesas ou receitas que se repetem (mensal, semanal, anual).
 
+* **RF11 - Exclusão de Transações:** Uma transação compartilhada só pode ser editada ou excluída pelo autor do lançamento ou pelo Administrador do grupo.
+
 ### 3.3. Organização e Planejamento
 
-* **RF11 - Gestão de Categorias:** O sistema deve permitir a criação, edição e exclusão de categorias.
-* **RF12 - Definição de Orçamentos (Budgets):** Os usuários devem poder estabelecer limites de gastos mensais por categoria, recebendo alertas visuais quando o limite estiver próximo (ex: 80%) ou for ultrapassado.
-* **RF13 - Gestão de Metas (Goals):** O grupo deve poder criar metas de economia (ex: "Viagem de Férias"), definindo um valor alvo, data limite e registrando aportes mensais.
+* **RF12 - Gestão de Categorias:** O sistema deve permitir a criação, edição e exclusão de categorias.
+* **RF13 - Definição de Orçamentos (Budgets):** Os usuários devem poder estabelecer limites de gastos mensais por categoria, recebendo alertas visuais quando o limite estiver próximo (ex: 80%) ou for ultrapassado.
+* **RF14 - Gestão de Metas (Goals):** O grupo deve poder criar metas de economia (ex: "Viagem de Férias"), definindo um valor alvo, data limite e registrando aportes mensais.
 
 ### 3.4. Visualização e Relatórios
 
-* **RF14 - Dashboard Interativo:** O sistema deve apresentar um painel principal com:
+* **RF15 - Dashboard Interativo:** O sistema deve apresentar um painel principal com:
 * Saldo total consolidado e saldo por conta.
 * Gráfico de receitas vs. despesas do mês.
 * Resumo de quem deve a quem (acertos pendentes no grupo).
 
-
-* **RF15 - Extrato Detalhado:** O sistema deve fornecer uma lista filtrável de todas as transações (por data, membro, categoria).
-
----
+* **RF16 - Extrato Detalhado:** O sistema deve fornecer uma lista filtrável de todas as transações (por data, membro, categoria).
 
 ## 4. Regras de Negócio (RN)
 
-
-* **RN01 - Exclusão de Transações:** Uma transação compartilhada só pode ser editada ou excluída pelo autor do lançamento ou pelo Administrador do grupo.
 * **RN02 - Fechamento de Fatura/Mês:** Saldos de "quem deve a quem" devem ser calculados dinamicamente com base nas despesas compartilhadas pagas por um único membro em nome do grupo.
 
 ---
