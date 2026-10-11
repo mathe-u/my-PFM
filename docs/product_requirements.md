@@ -60,27 +60,25 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 
 * **RF16 - Extrato Detalhado:** O sistema deve fornecer uma lista filtrável de todas as transações (por data, membro, categoria).
 
-## 4. Regras de Negócio (RN)
-
-* **RN02 - Fechamento de Fatura/Mês:** Saldos de "quem deve a quem" devem ser calculados dinamicamente com base nas despesas compartilhadas pagas por um único membro em nome do grupo.
+* **RF17 - Fechamento de Fatura/Mês:** Saldos de "quem deve a quem" devem ser calculados dinamicamente com base nas despesas compartilhadas pagas por um único membro em nome do grupo.
 
 ---
 
-## 5. Requisitos Não Funcionais (RNF) e Diretrizes de Arquitetura
+## 4. Requisitos Não Funcionais (RNF) e Diretrizes de Arquitetura
 
 Para garantir manutenibilidade, escalabilidade e qualidade do software, o sistema deve seguir as diretrizes abaixo:
 
-### 5.1. Arquitetura e Engenharia de Software
+### 4.1. Arquitetura e Engenharia de Software
 
 * **RNF01 - Padrões Arquiteturais:** O backend deve ser estruturado utilizando **Clean Architecture** em conjunto com princípios de **Domain-Driven Design (DDD)**. A lógica central de finanças (divisão de contas, cálculo de saldos) deve ser completamente isolada de frameworks web ou bancos de dados.
 * **RNF02 - Qualidade de Código:** O projeto deve ter testes de unidades para o nucleo de regras de negócio, garantindo ampla cobertura em cálculos financeiros e divisões de despesas.
 
-### 5.2. Stack Tecnológica
+### 4.2. Stack Tecnológica
 
 * **RNF03 - API RESTful:** A comunicação entre frontend e backend deve ocorrer através de uma API REST bem documentada. O backend pode ser implementado em **TypeScript (Node.js com Fastify)** para alta performance ou **Python (Django REST Framework)** para desenvolvimento ágil.
 * **RNF04 - Banco de Dados:** O sistema deve utilizar um banco de dados relacional para garantir a integridade transacional (ACID) das operações financeiras. Um banco como **PostgreSQL** é recomendado para produção, podendo-se adotar **SQLite** para os testes automatizados rápidos e ambientes de desenvolvimento locais.
 
-### 5.3. Usabilidade e Segurança
+### 4.3. Usabilidade e Segurança
 
 * **RNF05 - Responsividade:** A interface web deve ser responsiva e otimizada para uso em dispositivos móveis (Mobile First), visto que lançamentos financeiros frequentemente ocorrem "on the go".
 * **RNF06 - Segurança de Dados:** As senhas devem ser armazenadas com hash criptográfico (ex: bcrypt/argon2). A autenticação da API deve utilizar tokens JWT com expiração configurada.
