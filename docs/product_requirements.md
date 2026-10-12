@@ -70,26 +70,25 @@ Para garantir manutenibilidade, escalabilidade e qualidade do software, o sistem
 
 ### 4.1. Arquitetura e Engenharia de Software
 
-* **RNF01 - Padrões Arquiteturais:** O backend deve ser estruturado utilizando **Clean Architecture** em conjunto com princípios de **Domain-Driven Design (DDD)**. A lógica central de finanças (divisão de contas, cálculo de saldos) deve ser completamente isolada de frameworks web ou bancos de dados.
-* **RNF02 - Qualidade de Código:** O projeto deve ter testes de unidades para o nucleo de regras de negócio, garantindo ampla cobertura em cálculos financeiros e divisões de despesas.
+* **RNF01 - Padrões Arquiteturais:** A lógica central do backend de finanças (divisão de contas, cálculo de saldos) deve ser completamente isolada de frameworks web ou bancos de dados, e o projeto deve ter testes de unidades para o nucleo de regras de negócio, garantindo ampla cobertura em cálculos financeiros e divisões de despesas.
 
 ### 4.2. Stack Tecnológica
 
-* **RNF03 - API RESTful:** A comunicação entre frontend e backend deve ocorrer através de uma API REST bem documentada. O backend pode ser implementado em **TypeScript (Node.js com Fastify)** para alta performance ou **Python (Django REST Framework)** para desenvolvimento ágil.
-* **RNF04 - Banco de Dados:** O sistema deve utilizar um banco de dados relacional para garantir a integridade transacional (ACID) das operações financeiras. Um banco como **PostgreSQL** é recomendado para produção, podendo-se adotar **SQLite** para os testes automatizados rápidos e ambientes de desenvolvimento locais.
+* **RNF02 - API RESTful:** A comunicação entre frontend e backend deve ocorrer através de uma API REST bem documentada. O backend pode ser implementado em **TypeScript (Node.js com Fastify)** para alta performance ou **Python (Django REST Framework)** para desenvolvimento ágil.
+* **RNF03 - Banco de Dados:** O sistema deve utilizar um banco de dados relacional para garantir a integridade transacional (ACID) das operações financeiras. Um banco como **PostgreSQL** é recomendado para produção, podendo-se adotar **SQLite** para os testes automatizados rápidos e ambientes de desenvolvimento locais.
 
 ### 4.3. Usabilidade e Segurança
 
-* **RNF05 - Responsividade:** A interface web deve ser responsiva e otimizada para uso em dispositivos móveis (Mobile First), visto que lançamentos financeiros frequentemente ocorrem "on the go".
-* **RNF06 - Segurança de Dados:** As senhas devem ser armazenadas com hash criptográfico (ex: bcrypt/argon2). A autenticação da API deve utilizar tokens JWT com expiração configurada.
+* **RNF04 - Responsividade:** A interface web deve ser responsiva e otimizada para uso em dispositivos móveis (Mobile First), visto que lançamentos financeiros frequentemente ocorrem "on the go".
+* **RNF05 - Segurança de Dados:** As senhas devem ser armazenadas com hash criptográfico (ex: bcrypt/argon2). A autenticação da API deve utilizar tokens JWT com expiração configurada.
 
-* **RNF07 - Operacoes Atomicas:** O sistema deve garantir que as operacoes financeiras sejam atomicas, ou seja, que sejam executadas completamente ou nenhuma parte delas seja executada. Caso ocorra alguma falha durante a execucao de uma operacao, o sistema deve reverter todas as operacoes realizadas ate o momento, garantindo a integridade dos dados.
+* **RNF06 - Operacoes Atomicas:** O sistema deve garantir que as operacoes financeiras sejam atomicas, ou seja, que sejam executadas completamente ou nenhuma parte delas seja executada. Caso ocorra alguma falha durante a execucao de uma operacao, o sistema deve reverter todas as operacoes realizadas ate o momento, garantindo a integridade dos dados.
 
-* **RNF08 - Rotas publicas:** As rotas públicas podem ser acessadas sem autenticação, mas devem ser protegidas por rate limiting.
+* **RNF07 - Rotas publicas:** As rotas públicas podem ser acessadas sem autenticação, mas devem ser protegidas por rate limiting.
 - /api/auth/login
 - /api/auth/register
 
-* **RNF09 - Rotas protegidas:** As rotas protegidas devem ser acessadas apenas com autenticação e devem ter rate limiting.
+* **RNF08 - Rotas protegidas:** As rotas protegidas devem ser acessadas apenas com autenticação e devem ter rate limiting.
 - /api/groups
 - /api/transactions
 - /api/budgets
