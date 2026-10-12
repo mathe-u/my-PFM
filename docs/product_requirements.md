@@ -76,7 +76,7 @@ Para garantir manutenibilidade, escalabilidade e qualidade do software, o sistem
 
 * **RNF02 - API RESTful:** A comunicação entre frontend e backend deve ocorrer através de uma API REST bem documentada. O backend pode ser implementado em **Python (Django REST Framework)** para desenvolvimento ágil, e frontend em **Next.js (React)**.
 
-* **RNF03 - Banco de Dados:** O sistema deve utilizar um banco de dados relacional para garantir a integridade transacional (ACID) das operações financeiras. Um banco como **PostgreSQL** é recomendado para produção, podendo-se adotar **SQLite** para os testes automatizados rápidos e ambientes de desenvolvimento locais.
+* **RNF03 - Banco de Dados:** O sistema deve utilizar um banco de dados relacional para garantir a integridade transacional (ACID) das operações financeiras. Um banco como **PostgreSQL** é recomendado.
 
 ### 4.3. Usabilidade e Segurança
 
