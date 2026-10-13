@@ -1,0 +1,149 @@
+# =====================================
+# Python / Django / DRF
+# =====================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyc
+*.pyo
+
+*.log
+*.pot
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+*.sqlite3
+
+# Migrations (descomente se quiser ignorar em desenvolvimento local)
+# */migrations/*
+# !*/migrations/__init__.py
+
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+coverage.*
+*.cover
+.tox/
+.nox/
+
+.env
+.venv
+venv/
+ENV/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+.pypirc
+.pdm-python
+.pdm-build/
+
+# Poetry / Pipenv / PDM
+poetry.lock       # ← geralmente commitamos, mas muitos ignoram
+Pipfile.lock
+pdm.lock
+
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# =====================================
+# IDEs e editores
+# =====================================
+
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+.idea/
+*.iml
+*.iws
+out/
+
+*~
+*.swp
+*.swo
+*.swn
+*#
+
+*.sublime-*
+
+# =====================================
+# Sistema operacional / lixo comum
+# =====================================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+.thumbnails/
+*~
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =====================================
+# Outros comuns em projetos DRF
+# =====================================
+
+*.bak
+*.backup
+*.tmp
+*.swp
+*.swo
+
+.env
+.env.local
+.env.development
+.env.production
+*.secret
+*.key
+*.pem
+*.cert
+
+gunicorn.log
+uvicorn.log
+*.log.*
+
+node_modules/
+.npm
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+docker-compose.override.yml
+*.dockerignore
+
+# =====================================
+# Regras gerais de segurança
+# =====================================
+
+*.p12
+*.pfx
+*.jks
+keystore.properties
