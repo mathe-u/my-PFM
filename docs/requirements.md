@@ -15,7 +15,7 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 ### 3.1. Gestão de Usuários e Grupos
 
 * **RF01 - Autenticação:** O sistema deve permitir o cadastro e login de usuários via e-mail/senha.
-* **RF02 - Gestão de Perfil:** O usuário deve poder editar seus dados pessoais e preferências (moeda, idioma, fuso horário).
+* **RF02 - Gestão de Perfil:** O usuário deve poder editar seus dados pessoais e preferências (ex: moeda, idioma, fuso horário).
 * **RF03 - Criação de Grupos:** O usuário deve poder criar um "Grupo Financeiro" (ex: Casa, Viagem, Casal).
 * **RF04 - Convites para o Grupo:** O Administrador deve poder gerar um link de convite.
 
@@ -24,21 +24,21 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 * **RF05 - Lançamento de Receitas/Despesas:** O sistema deve permitir o registro de transações com os seguintes dados: valor, data, descrição, categoria e conta de origem/destino. Os lançamentos pessoais não devem ser considerados despesas ou receitas compartilhadas automaticamente.
 
 * **RF06 - Divisão de Despesas (Split):** No registro de uma despesa, o sistema deve permitir a divisão do valor entre os membros do grupo de três formas:
-* Igualitária (ex: 50/50).
-* Porcentagem personalizada (ex: 70/30).
-* Valor fixo exato para cada membro.
+    * Igualitária (ex: 50/50).
+    * Porcentagem personalizada (ex: 70/30).
+    * Valor fixo exato para cada membro.
 
 * **RF07 - Integridade da Divisão:** Ao dividir uma despesa, a soma das partes (em porcentagem ou valor absoluto) deve ser exatamente igual a 100% ou ao valor total da transação.
 
 * **RF08 - Transferências entre contas:** O sistema deve permitir que o usuário registre transferências de valores entre duas contas financeiras, informando a conta de origem, a conta de destino, o valor, a data e uma descrição opcional. A operação deve atualizar os saldos das contas envolvidas de maneira consistente, sem contabilizar a transferência como receita ou despesa.
 
 * **RF09 - Acertos de contas entre membros:** O sistema deve permitir que os membros registrem pagamentos realizados para quitar dívidas decorrentes de despesas compartilhadas, informando o pagador, o beneficiário, o valor, a data e uma descrição opcional. O registro deve atualizar os saldos devidos entre os membros sem contabilizar o pagamento como uma nova receita ou despesa.
-* Os acertos devem ser vinculados a uma despesa que foi dividida entre os membros.
-* O valor de um acerto não pode ser negativo ou igual a zero.
-* O valor de um acerto não pode superar a dívida pendente, salvo se o sistema permitir pagamentos antecipados ou créditos.
-* Apenas membros autorizados podem registrar ou editar acertos.
-* A operação deve pertencer ao grupo financeiro correto.
-* O sistema deve impedir que uma falha parcial deixe os registros financeiros inconsistentes.
+    * Os acertos devem ser vinculados a uma despesa que foi dividida entre os membros.
+    * O valor de um acerto não pode ser negativo ou igual a zero.
+    * O valor de um acerto não pode superar a dívida pendente, salvo se o sistema permitir pagamentos antecipados ou créditos.
+    * Apenas membros autorizados podem registrar ou editar acertos.
+    * A operação deve pertencer ao grupo financeiro correto.
+    * O sistema deve impedir que uma falha parcial deixe os registros financeiros inconsistentes.
 * O sistema apenas registra transferência entre contas e acertos entre membros, não executa nada em bancos reais.
 
 * **RF10 - Transações Recorrentes:** O sistema deve permitir a configuração de despesas ou receitas que se repetem (mensal, semanal, anual).
@@ -48,15 +48,18 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 ### 3.3. Organização e Planejamento
 
 * **RF12 - Gestão de Categorias:** O sistema deve permitir a criação, edição e exclusão de categorias.
-* **RF13 - Definição de Orçamentos (Budgets):** Os usuários devem poder estabelecer limites de gastos mensais por categoria, recebendo alertas visuais quando o limite estiver próximo (ex: 80%) ou for ultrapassado.
+
+* **RF13 - Definição de Orçamentos (Budgets):** Os usuários devem poder estabelecer limites de gastos mensais por categoria ou orçamento global, recebendo alertas visuais quando o limite estiver próximo (ex: 80%) ou for ultrapassado.
+
 * **RF14 - Gestão de Metas (Goals):** O grupo deve poder criar metas de economia (ex: "Viagem de Férias"), definindo um valor alvo, data limite e registrando aportes mensais.
 
 ### 3.4. Visualização e Relatórios
 
 * **RF15 - Dashboard Interativo:** O sistema deve apresentar um painel principal com:
-* Saldo total consolidado e saldo por conta.
-* Gráfico de receitas vs. despesas do mês.
-* Resumo de quem deve a quem (acertos pendentes no grupo).
+    * Saldo total consolidado e saldo por conta.
+    * Gráfico de receitas vs. despesas do mês.
+    * Se em um grupo de dois, mostrar comparativo de quem gastou mais, em que categoria, etc.
+    * Resumo de quem deve a quem (acertos pendentes no grupo).
 
 * **RF16 - Extrato Detalhado:** O sistema deve fornecer uma lista filtrável de todas as transações (por data, membro, categoria).
 
@@ -89,6 +92,7 @@ Para garantir manutenibilidade, escalabilidade e qualidade do software, o sistem
 * **RNF07 - Rotas publicas:** As rotas públicas podem ser acessadas sem autenticação, mas devem ser protegidas por rate limiting.
     * /api/auth/login
     * /api/auth/register
+    * /api/auth/refresh
 
 * **RNF08 - Rotas protegidas:** As rotas protegidas devem ser acessadas apenas com autenticação e devem ter rate limiting.
     * /api/groups
