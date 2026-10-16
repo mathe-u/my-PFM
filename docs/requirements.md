@@ -6,7 +6,8 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 
 ## 2. Atores (Perfis de Usuário)
 
-* **Proprietário do Grupo (Admin):** Usuário que cria o grupo financeiro. Tem permissão para convidar novos membros, remover membros e alterar configurações globais do grupo.
+* **Administrador (Admin do Sistema):** Usuário que tem acesso total ao sistema. Pode criar, editar e excluir qualquer entidade do sistema.
+* **Proprietário do Grupo:** Usuário que cria o grupo financeiro. Tem permissão para convidar novos membros, remover membros e alterar configurações globais do grupo.
 * **Membro do Grupo:** Usuário convidado. Pode registrar transações, visualizar dashboards, criar categorias e editar seus próprios lançamentos.
 * **Usuário Individual:** Usuário que utiliza o sistema apenas para gestão financeira pessoal, sem compartilhar dados (estado padrão antes de criar ou entrar em um grupo).
 
@@ -101,3 +102,9 @@ Para garantir manutenibilidade, escalabilidade e qualidade do software, o sistem
     * /api/goals
     * /api/categories
     * /api/users
+
+* **RNF09 - Nivel de acesso dos Atores:** Cada Ator tem um nivel de acesso pre definido no sistema, que deve ser respeitado em todas as rotas protegidas. ex:
+    * admin: tem acesso a todas as rotas.
+    * usuario individual nao tem acesso a rotas de DELETE groups/{id}/, UPDATE groups/{id}/, DELETE groups/{id}/members/{id}/, GET groups/{id}/, GET groups/{id}/members, etc.
+    * membro de um grupo nao tem acesso a rotas de DELETE groups/{id}/, UPDATE groups/{id}/, DELETE groups/{id}/members/{id}/, etc, mas tem a GET groups/{id}, GET groups/{id}/members etc.
+    * proprietario do grupo tem acesso a DELETE groups/{id}/, UPDATE groups/{id}/, DELETE groups/{id}/members/{id}/, etc.
