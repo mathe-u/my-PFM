@@ -6,10 +6,19 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 
 ## 2. Atores (Perfis de Usuário)
 
+Sistema (global)
+├── Admin
+└── Usuário
+    ├── Sem grupo  → chamamos de "Usuário Individual"
+    └── Com grupo  → aí entra a role de grupo (Owner ou Member)
+
+
 * **Administrador (Admin do Sistema):** Usuário que tem acesso total ao sistema. Pode criar, editar e excluir qualquer entidade do sistema.
-* **Proprietário do Grupo:** Usuário que cria o grupo financeiro. Tem permissão para convidar novos membros, remover membros e alterar configurações globais do grupo.
-* **Membro do Grupo:** Usuário convidado. Pode registrar transações, visualizar dashboards, criar categorias e editar seus próprios lançamentos.
-* **Usuário Individual:** Usuário que utiliza o sistema apenas para gestão financeira pessoal, sem compartilhar dados (estado padrão antes de criar ou entrar em um grupo).
+* **Usuário (User):** Usuário que tem acesso ao sistema. Pode criar, editar e excluir transações, categorias e metas. Pode criar ou entrar em um grupo financeiro.
+    se usuário não está em nenhum grupo, ele é um "Usuário Individual", que utiliza o sistema apenas para gestão financeira pessoal.
+    se usuário está em um grupo, ele pode ser:
+    * **Proprietário do Grupo:** Usuário que cria o grupo financeiro. Tem permissão para convidar novos membros, remover membros e alterar configurações globais do grupo.
+    * **Membro do Grupo:** Usuário convidado. Pode registrar transações, visualizar dashboards, criar categorias e editar seus próprios lançamentos.
 
 ## 3. Requisitos Funcionais (RF)
 
@@ -18,7 +27,7 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 * **RF01 - Autenticação:** O sistema deve permitir o cadastro e login de usuários via e-mail/senha.
 * **RF02 - Gestão de Perfil:** O usuário deve poder editar seus dados pessoais e preferências (ex: moeda, idioma, fuso horário).
 * **RF03 - Criação de Grupos:** O usuário deve poder criar um "Grupo Financeiro" (ex: Casa, Viagem, Casal).
-* **RF04 - Convites para o Grupo:** O Administrador deve poder gerar um link de convite.
+* **RF04 - Convites para o Grupo:** O proprietário do grupo deve poder gerar um link de convite.
 
 ### 3.2. Gestão de Transações
 
@@ -44,7 +53,7 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 
 * **RF10 - Transações Recorrentes:** O sistema deve permitir a configuração de despesas ou receitas que se repetem (mensal, semanal, anual).
 
-* **RF11 - Exclusão de Transações:** Uma transação compartilhada só pode ser editada ou excluída pelo autor do lançamento ou pelo Administrador do grupo.
+* **RF11 - Exclusão de Transações:** Uma transação compartilhada só pode ser editada ou excluída pelo autor do lançamento ou pelo proprietário do grupo.
 
 ### 3.3. Organização e Planejamento
 
