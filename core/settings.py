@@ -139,3 +139,5 @@ MAILERS = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True # Ajustar em produção para o domínio do front end em Next.js
+
+AUTH_USER_MODEL = 'users.CustomUser'

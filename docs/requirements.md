@@ -6,11 +6,11 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 
 ## 2. Atores (Perfis de Usuário)
 
-Sistema (global)
-├── Admin
-└── Usuário
-    ├── Sem grupo  → chamamos de "Usuário Individual"
-    └── Com grupo  → aí entra a role de grupo (Owner ou Member)
+    Sistema (global)
+    ├── Admin
+    └── Usuário
+        ├── Sem grupo  → chamamos de "Usuário Individual"
+        └── Com grupo  → aí entra a role de grupo (Owner ou Member)
 
 
 * **Administrador (Admin do Sistema):** Usuário que tem acesso total ao sistema. Pode criar, editar e excluir qualquer entidade do sistema.
