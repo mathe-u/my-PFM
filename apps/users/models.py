@@ -16,11 +16,15 @@ def user_image_path(instance, filename):
 
 class CustomUser(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=30)
-    username = models.CharField(max_length=20, unique=True)
+    name = models.CharField(max_length=150)
     email = models.EmailField(unique=True)
     image = models.ImageField(upload_to=user_image_path, blank=True, null=True)
-    is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    
-    
+    updated_at = models.DateTimeField(auto_now=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['name', 'username']
+
+    @property
+    def is_individual(self) -> bool:
+        return not self.memberships.exists()
