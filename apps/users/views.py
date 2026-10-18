@@ -8,30 +8,30 @@ class RegisterView(generics.CreateAPIView):
     permission_classes = [permissions.AllowAny]
 
 
-class LoginView:
+class LoginView(generics.GenericAPIView):
     pass
 
 
-class LogoutView:
+class LogoutView(generics.GenericAPIView):
     pass
 
 
-class RefreshTokenView:
+class RefreshTokenView(generics.GenericAPIView):
     pass
 
 
-class ChangePasswordView:
+class ChangePasswordView(generics.GenericAPIView):
     pass
 
 
-class ForgotPasswordView:
+class ForgotPasswordView(generics.GenericAPIView):
     pass
 
 
-class ResetPasswordView:
+class ResetPasswordView(generics.GenericAPIView):
     pass
 
 
-class UserMeView:
+class UserMeView(generics.GenericAPIView):
     """PATCH/GET /api/users/me/"""
     pass
