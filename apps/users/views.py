@@ -1,10 +1,14 @@
 from rest_framework import generics, permissions
+
 from apps.users.models import CustomUser
+from users.serializers import (
+    RegisterSerializer,
+)
 
 
 class RegisterView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
-    serializer_class = None
+    serializer_class = RegisterSerializer
     permission_classes = [permissions.AllowAny]
 
 
@@ -32,6 +36,8 @@ class ResetPasswordView(generics.GenericAPIView):
     pass
 
 
-class UserMeView(generics.GenericAPIView):
+class UserMeView(generics.RetrieveUpdateAPIView):
     """PATCH/GET /api/users/me/"""
-    pass
+    
+    def get_object(self):
+        return self.request.user
