@@ -2,7 +2,7 @@ from requests import request
 from os import write
 import email
 from rest_framework import serializers
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 from django.contrib.auth.password_validation import validate_password
 from django.contrib.auth import authenticate
 
@@ -30,6 +30,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'email', 'image', 'is_individual', 'created_at', 'updated_at']
         read_only_fields = ['id', 'is_individual', 'created_at', 'updated_at']
 
+
 class LoginSetializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField(write_only=True)
@@ -51,3 +52,18 @@ class LoginSetializer(serializers.Serializer):
             'access': str(refresh.access_token),
             'user': UserSerializer(user, context=self.context).data,
         }
+
+
+class LogoutSerializer(serializers.Serializer):
+    refresh = serializers.CharField()
+
+    def validate(self, attrs):
+        self.refresh_token = attrs['refresh']
+        return attrs
+
+    def save(self, **kwargs):
+        try:
+            token = RefreshToken(self.refresh_token)
+            token.blacklist()
+        except TokenError:
+            raise serializers.ValidationError({'refresh': 'Token invalid or already expired.'})

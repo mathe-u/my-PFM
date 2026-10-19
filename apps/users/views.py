@@ -3,6 +3,7 @@ from rest_framework import generics, permissions
 from apps.users.models import CustomUser
 from users.serializers import (
     RegisterSerializer,
+    UserSerializer,
 )
 
 
@@ -38,6 +39,8 @@ class ResetPasswordView(generics.GenericAPIView):
 
 class UserMeView(generics.RetrieveUpdateAPIView):
     """PATCH/GET /api/users/me/"""
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = UserSerializer
     
     def get_object(self):
         return self.request.user
