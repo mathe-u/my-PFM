@@ -5,7 +5,7 @@ from rest_framework_simplejwt.views import TokenRefreshView
 from apps.users.models import CustomUser
 from apps.users.serializers import (
     RegisterSerializer,
-    LoginSetializer,
+    LoginSerializer,
     LogoutSerializer,
     UserSerializer,
 )
@@ -18,7 +18,7 @@ class RegisterView(generics.CreateAPIView):
 
 
 class LoginView(generics.GenericAPIView):
-    serializer_class = LoginSetializer
+    serializer_class = LoginSerializer
     permission_classes = [permissions.AllowAny]
 
     def post(self, request, *args, **kwargs):
