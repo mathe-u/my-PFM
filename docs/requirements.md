@@ -24,7 +24,7 @@ O sistema é uma aplicação web (Personal Finance Management - PFM) projetada p
 
 ### 3.1. Gestão de Usuários e Grupos
 
-* **RF01 - Autenticação:** O sistema deve permitir o cadastro e login de usuários via e-mail/senha.
+* **RF01 - Autenticação:** O sistema deve permitir o cadastro e login de usuários via e-mail/senha. Se alguem tentar cadastrar com email que ja existe ignore, mas mostre uma mensagem neutra como 'solicitacao recebida, verifique seu email...', se o email nao existe mostre a mesma mensagem.
 * **RF02 - Gestão de Perfil:** O usuário deve poder editar seus dados pessoais e preferências (ex: moeda, idioma, fuso horário).
 * **RF03 - Criação de Grupos:** O usuário deve poder criar um "Grupo Financeiro" (ex: Casa, Viagem, Casal).
 * **RF04 - Convites para o Grupo:** O proprietário do grupo deve poder gerar um link de convite.

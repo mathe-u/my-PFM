@@ -1,6 +1,3 @@
-from requests import request
-from os import write
-import email
 from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 from django.contrib.auth.password_validation import validate_password
