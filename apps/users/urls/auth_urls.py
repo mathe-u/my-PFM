@@ -5,7 +5,8 @@ from users.views import (
     LoginView,
     LogoutView,
     RefreshTokenView,
-    UserMeView
+    UserMeView,
+    UserImageUpdateView,
 )
 
 urlpatterns = [
@@ -14,4 +15,5 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('refresh/', RefreshTokenView.as_view(), name='refresh-token'),
     path('me/', UserMeView.as_view(), name='me'),
+    path('image/', UserImageUpdateView.as_view(), name='user-image-update'),
 ]
