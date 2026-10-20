@@ -1,8 +1,9 @@
 from rest_framework import generics, permissions, parsers, status
 from rest_framework.response import Response
+from rest_framework_simplejwt.views import TokenRefreshView
 
 from apps.users.models import CustomUser
-from users.serializers import (
+from apps.users.serializers import (
     RegisterSerializer,
     LoginSetializer,
     LogoutSerializer,
@@ -26,7 +27,7 @@ class LoginView(generics.GenericAPIView):
         return Response(serializer.validated_data, status=status.HTTP_200_OK)
 
 
-class LogoutView():
+class LogoutView(generics.GenericAPIView):
     serializer_class = LogoutSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -37,7 +38,7 @@ class LogoutView():
         return Response({'detail': 'Successfully logged out.'}, status=status.HTTP_204_NO_CONTENT)
 
 
-class RefreshTokenView():
+class RefreshTokenView(TokenRefreshView):
     permission_classes = [permissions.AllowAny]
 
 
@@ -53,7 +54,7 @@ class ResetPasswordView():
     pass
 
 
-class UserImageUpdateView():
+class UserImageUpdateView(generics.UpdateAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = UserSerializer
     parser_classes = [parsers.MultiPartParser, parsers.FormParser]

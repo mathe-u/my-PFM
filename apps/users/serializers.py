@@ -3,7 +3,7 @@ from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 from django.contrib.auth.password_validation import validate_password
 from django.contrib.auth import authenticate
 
-from users.models import CustomUser
+from apps.users.models import CustomUser
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, validators=[validate_password])
@@ -13,7 +13,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         fields = ['name', 'email', 'password']
     
     def create(self, validated_data):
-        user = CustomUser.objects._create_user(
+        user = CustomUser.objects.create_user(
+            username=validated_data['email'],
             name=validated_data['name'],
             email=validated_data['email'],
             password=validated_data['password']
@@ -43,7 +44,7 @@ class LoginSetializer(serializers.Serializer):
         if not user.is_active:
             raise serializers.ValidationError('This user account is disabled.')
         
-        refresh = RefreshToken.for_user()
+        refresh = RefreshToken.for_user(user)
         return {
             'refresh': str(refresh),
             'access': str(refresh.access_token),
