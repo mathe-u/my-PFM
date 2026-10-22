@@ -83,7 +83,7 @@ Para garantir manutenibilidade, escalabilidade e qualidade do software, o sistem
 
 ### 4.1. Arquitetura e Engenharia de Software
 
-* **RNF01 - Padrões Arquiteturais:** A lógica central do backend de finanças (divisão de contas, cálculo de saldos) deve ser completamente isolada de frameworks web ou bancos de dados, e o projeto deve ter testes de unidades para o nucleo de regras de negócio, garantindo ampla cobertura em cálculos financeiros e divisões de despesas.
+* **RNF01 - Padrões Arquiteturais:** Se possivel, a lógica central do backend de finanças (divisão de contas, cálculo de saldos) deve ser completamente isolada de frameworks web ou bancos de dados, e o projeto deve ter testes de unidades para o nucleo de regras de negócio, garantindo ampla cobertura em cálculos financeiros e divisões de despesas.
 
 ### 4.2. Stack Tecnológica
 
