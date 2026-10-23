@@ -7,6 +7,8 @@ from apps.users.views import (
     RefreshTokenView,
     UserMeView,
     UserImageUpdateView,
+    ResetPasswordRequestView,
+    ResetPasswordConfirmView,
 )
 
 urlpatterns = [
@@ -16,4 +18,6 @@ urlpatterns = [
     path('refresh/', RefreshTokenView.as_view(), name='refresh-token'),
     path('me/', UserMeView.as_view(), name='me'),
     path('image/', UserImageUpdateView.as_view(), name='user-image-update'),
+    path('password-reset/', ResetPasswordRequestView.as_view(), name='password-reset-request'),
+    path('password-reset/confirm/', ResetPasswordConfirmView.as_view(), name='password-reset-confirm'),
 ]

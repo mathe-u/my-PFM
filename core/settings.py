@@ -132,12 +132,18 @@ STATIC_URL = 'static/'
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
+# Em desenvolvimento, os e-mails são impressos no terminal (sem envio real).
+# Para produção, substitua por smtp.EmailBackend e configure as variáveis abaixo.
+#EMAIL_BACKEND    = env('EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
+#DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='no-reply@mypfm.local')
 
 MAILERS = {
     'default': {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+# URL do front-end usada na composição do link de reset de senha.
+#FRONTEND_RESET_PASSWORD_URL = env('FRONTEND_RESET_PASSWORD_URL', default='http://localhost:3000/reset-password')
 
 CORS_ALLOW_ALL_ORIGINS = True # Ajustar em produção para o domínio do front end em Next.js
 
